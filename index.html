@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trendy Kurtis - Fashion for Gen Z Queens</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>AURA - Contemporary Kurtis for Modern Women</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
         * {
             margin: 0;
@@ -15,62 +15,64 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
         }
 
         /* Navigation */
         nav {
-            background: linear-gradient(135deg, #FF69B4, #E91E63);
-            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .logo {
-            width: 50px;
-            height: 50px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             font-weight: 700;
-            color: #FF69B4;
-            text-transform: lowercase;
-            font-style: italic;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 3rem;
+            align-items: center;
         }
 
         .nav-links a {
-            color: white;
+            color: #333;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
             transition: all 0.3s ease;
             position: relative;
-        }
-
-        .nav-links a:hover {
-            transform: translateY(-2px);
         }
 
         .nav-links a::after {
@@ -78,9 +80,9 @@
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px;
+            bottom: -8px;
             left: 0;
-            background: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             transition: width 0.3s ease;
         }
 
@@ -88,31 +90,46 @@
             width: 100%;
         }
 
-        .login-btn {
-            background: #4ECDC4;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
 
-        .login-btn:hover {
-            background: #45B7D1;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(76, 205, 196, 0.4);
+        .search-icon, .cart-icon, .user-icon {
+            font-size: 1.2rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .search-icon:hover, .cart-icon:hover, .user-icon:hover {
+            color: #667eea;
+            transform: translateY(-1px);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #8A2BE2, #FF69B4, #FFA500);
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 2rem;
-            margin-top: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             position: relative;
             overflow: hidden;
         }
@@ -124,422 +141,470 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad1" cx="50%" cy="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23grad1)"/><circle cx="800" cy="300" r="150" fill="url(%23grad1)"/><circle cx="400" cy="700" r="80" fill="url(%23grad1)"/></svg>') no-repeat;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad1" cx="20%" cy="20%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></radialGradient><radialGradient id="grad2" cx="80%" cy="80%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.08)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="300" fill="url(%23grad1)"/><circle cx="800" cy="800" r="400" fill="url(%23grad2)"/></svg>') no-repeat;
             background-size: cover;
-            opacity: 0.3;
         }
 
         .hero-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
-            z-index: 2;
-            position: relative;
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
             color: white;
-            margin-bottom: 1rem;
             line-height: 1.1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             font-weight: 400;
+            line-height: 1.5;
         }
 
         .hero-cta {
-            background: #4ECDC4;
-            color: white;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
-            display: inline-block;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
         .hero-cta:hover {
-            background: #45B7D1;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(76, 205, 196, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .hero-image {
             position: relative;
-            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero-model {
             width: 100%;
+            max-width: 500px;
             height: 600px;
             background: url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
-            border-radius: 20px;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        .floating-shapes {
+        .floating-elements {
             position: absolute;
             width: 100%;
             height: 100%;
             pointer-events: none;
         }
 
-        .shape {
+        .floating-card {
             position: absolute;
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            color: white;
+            animation: floatCard 6s ease-in-out infinite;
         }
 
-        .shape1 {
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 165, 0, 0.7);
-            top: 20%;
-            right: 10%;
+        .card1 {
+            top: 10%;
+            right: -10%;
             animation-delay: 0s;
         }
 
-        .shape2 {
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 105, 180, 0.6);
+        .card2 {
             bottom: 20%;
-            left: -5%;
-            animation-delay: 2s;
+            left: -15%;
+            animation-delay: 3s;
         }
 
-        .shape3 {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 215, 0, 0.8);
-            top: 60%;
-            right: 15%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) scale(1);
-            }
-            50% {
-                transform: translateY(-20px) scale(1.1);
-            }
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
         }
 
         /* Collections Section */
         .collections {
-            background: linear-gradient(135deg, #F8F9FF, #E8F4FD);
-            padding: 100px 2rem;
-            position: relative;
-        }
-
-        .collections::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(255,105,180,0.05)"/><stop offset="100%" style="stop-color:rgba(138,43,226,0.05)"/></linearGradient></defs><polygon points="0,0 1000,300 1000,1000 0,700" fill="url(%23grad2)"/></svg>') no-repeat;
-            background-size: cover;
+            padding: 120px 2rem;
+            background: #fafafa;
         }
 
         .collections-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+        }
+
+        .section-header {
             text-align: center;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
         }
 
         .section-title {
+            font-family: 'Playfair Display', serif;
             font-size: 3rem;
-            font-weight: 700;
-            color: #8A2BE2;
-            margin-bottom: 3rem;
-            position: relative;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
         }
 
-        .section-title::after {
-            content: '';
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(45deg, #FF69B4, #4ECDC4);
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
+        .section-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .collections-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
         }
 
         .collection-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
             position: relative;
         }
 
         .collection-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
         }
 
         .collection-image {
             width: 100%;
-            height: 400px;
+            height: 300px;
             background-size: cover;
             background-position: center;
             position: relative;
-            overflow: hidden;
         }
 
-        .blue-kurtis {
-            background-image: url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
-        }
-
-        .green-kurtis {
-            background-image: url('https://images.unsplash.com/photo-1583391733722-ad9d7b1f86ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
-        }
-
-        .collection-image::before {
-            content: '';
+        .collection-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(0,0,0,0.1), transparent);
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .collection-card:hover .collection-overlay {
+            opacity: 1;
+        }
+
+        .overlay-btn {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transform: translateY(20px);
             transition: all 0.3s ease;
         }
 
-        .collection-card:hover .collection-image::before {
-            background: linear-gradient(45deg, rgba(255,105,180,0.3), rgba(76,205,196,0.3));
+        .collection-card:hover .overlay-btn {
+            transform: translateY(0);
         }
 
         .collection-content {
             padding: 2rem;
-            text-align: center;
         }
 
         .collection-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-subtitle {
+            color: #666;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
         }
 
-        .collection-btn {
-            background: linear-gradient(135deg, #8A2BE2, #FF69B4);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
+        .collection-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .collection-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+        .item-count {
+            color: #667eea;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .collection-arrow {
+            color: #667eea;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .collection-card:hover .collection-arrow {
+            transform: translateX(5px);
         }
 
         /* Featured Products */
         .featured {
-            padding: 100px 2rem;
-            background: linear-gradient(135deg, #FF69B4, #8A2BE2);
-            color: white;
+            padding: 120px 2rem;
+            background: white;
         }
 
         .featured-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            text-align: center;
-        }
-
-        .featured .section-title {
-            color: white;
-        }
-
-        .featured .section-title::after {
-            background: linear-gradient(45deg, #4ECDC4, #FFA500);
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .product-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 20px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
             transition: all 0.4s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.6s;
-        }
-
-        .product-card:hover::before {
-            left: 100%;
+            border: 1px solid #f0f0f0;
         }
 
         .product-card:hover {
-            transform: translateY(-10px) rotateY(5deg);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         }
 
         .product-image {
             width: 100%;
-            height: 250px;
-            border-radius: 15px;
-            margin-bottom: 1rem;
+            height: 350px;
             background-size: cover;
             background-position: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .product1 { background-image: url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'); }
-        .product2 { background-image: url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'); }
-        .product3 { background-image: url('https://images.unsplash.com/photo-1583391733722-ad9d7b1f86ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'); }
-        .product4 { background-image: url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'); }
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #ff6b6b;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .product-actions {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-actions {
+            opacity: 1;
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
 
         .product-title {
-            font-size: 1.2rem;
             font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a1a1a;
             margin-bottom: 0.5rem;
         }
 
-        .product-price {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #4ECDC4;
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
-        .product-btn {
-            background: #4ECDC4;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .product-btn:hover {
-            background: #45B7D1;
+        .current-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .discount {
+            background: #e8f5e8;
+            color: #4caf50;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
         }
 
         /* Why Choose Us */
         .why-choose {
-            padding: 100px 2rem;
-            background: white;
+            padding: 120px 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
 
         .why-choose-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            text-align: center;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
         .feature-card {
+            background: white;
             padding: 2.5rem;
             border-radius: 20px;
-            background: linear-gradient(135deg, #F8F9FF, #E8F4FD);
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
+            text-align: center;
             transition: all 0.4s ease;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #FF69B4, #8A2BE2, #4ECDC4);
-            border-radius: 20px;
-            padding: 2px;
-            mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #FF69B4, #8A2BE2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 1.5rem;
         }
 
         .feature-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
             margin-bottom: 1rem;
         }
 
@@ -548,10 +613,98 @@
             line-height: 1.6;
         }
 
+        /* Testimonials */
+        .testimonials {
+            padding: 120px 2rem;
+            background: white;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: -10px;
+            left: 2rem;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            color: #333;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .customer-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .customer-details h4 {
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .customer-details p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            margin-left: auto;
+            color: #ffd700;
+            font-size: 1.1rem;
+        }
+
         /* Newsletter */
         .newsletter {
             padding: 80px 2rem;
-            background: linear-gradient(135deg, #4ECDC4, #45B7D1);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
         }
@@ -562,13 +715,14 @@
         }
 
         .newsletter h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
         .newsletter p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
         }
 
@@ -577,86 +731,86 @@
             max-width: 500px;
             margin: 0 auto;
             gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 0.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .newsletter-input {
             flex: 1;
-            padding: 15px 20px;
+            padding: 1rem 1.5rem;
             border: none;
-            border-radius: 25px;
+            border-radius: 50px;
             font-size: 1rem;
             outline: none;
+            background: transparent;
+            color: white;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .newsletter-btn {
-            background: #FF69B4;
-            color: white;
-            padding: 15px 30px;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 25px;
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .newsletter-btn:hover {
-            background: #E91E63;
-            transform: translateY(-2px);
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #1a1a1a;
             color: white;
             padding: 60px 2rem 30px;
         }
 
         .footer-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
         }
 
-        .footer-section h3 {
-            font-size: 1.3rem;
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #4ECDC4;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul li a {
+        .footer-brand p {
             color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: #4ECDC4;
+            line-height: 1.6;
+            margin-bottom: 2rem;
         }
 
         .social-icons {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
         }
 
         .social-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #FF69B4, #8A2BE2);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -664,18 +818,44 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .social-icon:hover {
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translateY(-2px);
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: #667eea;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #444;
-            color: #ccc;
+            border-top: 1px solid #333;
+            color: #999;
         }
 
         /* Mobile Responsiveness */
@@ -687,110 +867,200 @@
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
             
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .collections-grid,
+            .products-grid,
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                background: none;
+                padding: 0;
+            }
+            
+            .newsletter-input {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
-            .collections-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-            
-            .hero-model {
-                height: 400px;
+            .hero-badge,
+            .section-badge {
+                font-size: 0.8rem;
             }
         }
 
         /* Animations */
-        @keyframes slideInUp {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .animate-on-scroll {
-            animation: slideInUp 0.8s ease forwards;
-        }
-
-        /* Loading Animation */
-        .loading {
+        .fade-in {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(30px);
             transition: all 0.6s ease;
         }
 
-        .loading.loaded {
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Loading states */
+        .loading {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .loaded {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">t</div>
+            <div class="logo">AURA</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#shop">Shop</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#featured">New Arrivals</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="login-btn">Login</button>
+            <div class="nav-actions">
+                <i class="fas fa-search search-icon"></i>
+                <i class="fas fa-user user-icon"></i>
+                <div style="position: relative;">
+                    <i class="fas fa-shopping-bag cart-icon"></i>
+                    <span class="cart-count">2</span>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="floating-shapes">
-            <div class="shape shape1"></div>
-            <div class="shape shape2"></div>
-            <div class="shape shape3"></div>
+        <div class="floating-elements">
+            <div class="floating-card card1">
+                <div style="font-size: 0.9rem; font-weight: 600;">Free Shipping</div>
+                <div style="font-size: 0.8rem; opacity: 0.8;">Orders above ₹999</div>
+            </div>
+            <div class="floating-card card2">
+                <div style="font-size: 0.9rem; font-weight: 600;">30 Day Returns</div>
+                <div style="font-size: 0.8rem; opacity: 0.8;">Hassle-free exchange</div>
+            </div>
         </div>
         <div class="hero-container">
-            <div class="hero-content loading">
-                <h1>Stylish<br>Kurtis</h1>
-                <p class="hero-subtitle">For the Gen Z Queen</p>
-                <a href="#shop" class="hero-cta">Shop Now</a>
+            <div class="hero-content fade-in">
+                <div class="hero-badge">✨ New Collection Launched</div>
+                <h1>Redefine Your Style</h1>
+                <p class="hero-subtitle">Discover contemporary kurtis that blend traditional elegance with modern sophistication. Crafted for the confident, independent woman.</p>
+                <a href="#collections" class="hero-cta">
+                    Explore Collection
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-            <div class="hero-image loading">
+            <div class="hero-image fade-in">
                 <div class="hero-model"></div>
             </div>
         </div>
     </section>
 
     <!-- Collections Section -->
-    <section class="collections" id="shop">
+    <section class="collections" id="collections">
         <div class="collections-container">
-            <h2 class="section-title loading">Discover Our Collections</h2>
+            <div class="section-header fade-in">
+                <div class="section-badge">Our Collections</div>
+                <h2 class="section-title">Curated for Every Occasion</h2>
+                <p class="section-description">From casual workdays to special celebrations, find the perfect kurti that speaks to your personal style</p>
+            </div>
+            
             <div class="collections-grid">
-                <div class="collection-card loading">
-                    <div class="collection-image blue-kurtis"></div>
+                <div class="collection-card fade-in">
+                    <div class="collection-image" style="background-image: url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="collection-overlay">
+                            <a href="#" class="overlay-btn">Shop Now</a>
+                        </div>
+                    </div>
                     <div class="collection-content">
-                        <h3 class="collection-title">Blue Kurtis</h3>
-                        <a href="#" class="collection-btn">Shop Now</a>
+                        <h3 class="collection-title">Office Chic</h3>
+                        <p class="collection-subtitle">Professional yet stylish workwear</p>
+                        <div class="collection-meta">
+                            <span class="item-count">24 Items</span>
+                            <i class="fas fa-arrow-right collection-arrow"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="collection-card loading">
-                    <div class="collection-image green-kurtis"></div>
+
+                <div class="collection-card fade-in">
+                    <div class="collection-image" style="background-image: url('https://images.unsplash.com/photo-1583391733722-ad9d7b1f86ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="collection-overlay">
+                            <a href="#" class="overlay-btn">Shop Now</a>
+                        </div>
+                    </div>
                     <div class="collection-content">
-                        <h3 class="collection-title">Green Kurtis</h3>
-                        <a href="#" class="collection-btn">Shop Now</a>
+                        <h3 class="collection-title">Weekend Casual</h3>
+                        <p class="collection-subtitle">Comfortable designs for leisure days</p>
+                        <div class="collection-meta">
+                            <span class="item-count">18 Items</span>
+                            <i class="fas fa-arrow-right collection-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-card fade-in">
+                    <div class="collection-image" style="background-image: url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="collection-overlay">
+                            <a href="#" class="overlay-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Festive Glam</h3>
+                        <p class="collection-subtitle">Elegant pieces for celebrations</p>
+                        <div class="collection-meta">
+                            <span class="item-count">32 Items</span>
+                            <i class="fas fa-arrow-right collection-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-card fade-in">
+                    <div class="collection-image" style="background-image: url('https://images.unsplash.com/photo-1583391733678-ac6223c1e8a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="collection-overlay">
+                            <a href="#" class="overlay-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Date Night</h3>
+                        <p class="collection-subtitle">Sophisticated evening wear</p>
+                        <div class="collection-meta">
+                            <span class="item-count">15 Items</span>
+                            <i class="fas fa-arrow-right collection-arrow"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -798,33 +1068,93 @@
     </section>
 
     <!-- Featured Products -->
-    <section class="featured">
+    <section class="featured" id="featured">
         <div class="featured-container">
-            <h2 class="section-title loading">Trending Now 🔥</h2>
+            <div class="section-header fade-in">
+                <div class="section-badge">Trending Now</div>
+                <h2 class="section-title">New Arrivals</h2>
+                <p class="section-description">Fresh designs that are making waves in contemporary fashion</p>
+            </div>
+            
             <div class="products-grid">
-                <div class="product-card loading">
-                    <div class="product-image product1"></div>
-                    <h4 class="product-title">Boho Chic Kurti</h4>
-                    <p class="product-price">₹1,299</p>
-                    <button class="product-btn">Add to Cart</button>
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');">
+                        <div class="product-badge">New</div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Midnight Blue Elegance</h4>
+                        <p class="product-description">Sophisticated A-line kurti with intricate embroidery</p>
+                        <div class="product-price">
+                            <span class="current-price">₹2,299</span>
+                            <span class="original-price">₹2,999</span>
+                            <span class="discount">23% Off</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
                 </div>
-                <div class="product-card loading">
-                    <div class="product-image product2"></div>
-                    <h4 class="product-title">Royal Blue Elegance</h4>
-                    <p class="product-price">₹1,599</p>
-                    <button class="product-btn">Add to Cart</button>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');">
+                        <div class="product-badge">Bestseller</div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Ocean Breeze Casual</h4>
+                        <p class="product-description">Comfortable cotton blend perfect for everyday wear</p>
+                        <div class="product-price">
+                            <span class="current-price">₹1,799</span>
+                            <span class="original-price">₹2,199</span>
+                            <span class="discount">18% Off</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
                 </div>
-                <div class="product-card loading">
-                    <div class="product-image product3"></div>
-                    <h4 class="product-title">Emerald Dream</h4>
-                    <p class="product-price">₹1,199</p>
-                    <button class="product-btn">Add to Cart</button>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1583391733722-ad9d7b1f86ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');">
+                        <div class="product-badge">Limited</div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Emerald Garden</h4>
+                        <p class="product-description">Premium silk kurti with botanical prints</p>
+                        <div class="product-price">
+                            <span class="current-price">₹3,499</span>
+                            <span class="original-price">₹4,299</span>
+                            <span class="discount">19% Off</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
                 </div>
-                <div class="product-card loading">
-                    <div class="product-image product4"></div>
-                    <h4 class="product-title">Sunshine Yellow</h4>
-                    <p class="product-price">₹1,399</p>
-                    <button class="product-btn">Add to Cart</button>
+
+                <div class="product-card fade-in">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1583391733678-ac6223c1e8a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');">
+                        <div class="product-badge">Hot</div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">Rose Gold Shimmer</h4>
+                        <p class="product-description">Glamorous party wear with metallic accents</p>
+                        <div class="product-price">
+                            <span class="current-price">₹2,899</span>
+                            <span class="original-price">₹3,599</span>
+                            <span class="discount">20% Off</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -833,37 +1163,117 @@
     <!-- Why Choose Us -->
     <section class="why-choose" id="about">
         <div class="why-choose-container">
-            <h2 class="section-title loading">Why Gen Z Loves Us 💕</h2>
+            <div class="section-header fade-in">
+                <div class="section-badge">Why Choose AURA</div>
+                <h2 class="section-title">Crafted with Care, Designed for You</h2>
+                <p class="section-description">We understand the modern woman's needs and create fashion that fits seamlessly into your lifestyle</p>
+            </div>
+            
             <div class="features-grid">
-                <div class="feature-card loading">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Lightning Fast Delivery</h3>
-                    <p class="feature-description">Get your favorite kurtis delivered in 24-48 hours. Because waiting is so last season!</p>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="feature-title">Fast & Free Delivery</h3>
+                    <p class="feature-description">Express delivery within 24-48 hours across major cities. Free shipping on orders above ₹999.</p>
                 </div>
-                <div class="feature-card loading">
-                    <div class="feature-icon">💎</div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
                     <h3 class="feature-title">Premium Quality</h3>
-                    <p class="feature-description">Handpicked fabrics and superior craftsmanship. Quality that lasts, style that impresses.</p>
+                    <p class="feature-description">Hand-selected fabrics and meticulous craftsmanship ensure every piece meets our high standards.</p>
                 </div>
-                <div class="feature-card loading">
-                    <div class="feature-icon">🌟</div>
-                    <h3 class="feature-title">Insta-Worthy Designs</h3>
-                    <p class="feature-description">Every piece is designed to be your next viral post. Get ready for those likes and compliments!</p>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="feature-title">Trendy Designs</h3>
+                    <p class="feature-description">Our design team stays ahead of fashion trends to bring you the latest styles and patterns.</p>
                 </div>
-                <div class="feature-card loading">
-                    <div class="feature-icon">💸</div>
-                    <h3 class="feature-title">Student-Friendly Prices</h3>
-                    <p class="feature-description">Look like a million bucks without breaking the bank. Fashion that fits your budget!</p>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="feature-title">Best Prices</h3>
+                    <p class="feature-description">Premium fashion at accessible prices. Regular sales and exclusive member discounts.</p>
                 </div>
-                <div class="feature-card loading">
-                    <div class="feature-icon">🔄</div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
                     <h3 class="feature-title">Easy Returns</h3>
-                    <p class="feature-description">Not feeling it? No worries! 30-day hassle-free returns. Shop with confidence!</p>
+                    <p class="feature-description">30-day hassle-free returns and exchanges. Your satisfaction is our priority.</p>
                 </div>
-                <div class="feature-card loading">
-                    <div class="feature-icon">📱</div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
                     <h3 class="feature-title">24/7 Support</h3>
-                    <p class="feature-description">Got questions? We're always here to help. Chat, call, or DM us anytime!</p>
+                    <p class="feature-description">Our customer service team is always ready to help via chat, email, or phone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header fade-in">
+                <div class="section-badge">Customer Stories</div>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-description">Real reviews from women who love their AURA kurtis</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"AURA kurtis have become my go-to for office wear. The quality is exceptional and they're so comfortable for long workdays. I've received countless compliments!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">P</div>
+                        <div class="customer-details">
+                            <h4>Priya Sharma</h4>
+                            <p>Marketing Manager, Bangalore</p>
+                        </div>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"I ordered three kurtis for my friend's wedding and they were absolutely perfect! The fabric quality and fit exceeded my expectations. Highly recommended!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">A</div>
+                        <div class="customer-details">
+                            <h4>Ananya Gupta</h4>
+                            <p>Software Engineer, Pune</p>
+                        </div>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"The variety and style options are amazing! I love how each kurti is unique and modern. The delivery was super fast too. Will definitely shop again!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">S</div>
+                        <div class="customer-details">
+                            <h4>Shreya Patel</h4>
+                            <p>Fashion Blogger, Mumbai</p>
+                        </div>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -871,125 +1281,13 @@
 
     <!-- Newsletter -->
     <section class="newsletter">
-        <div class="newsletter-container">
-            <h2 class="loading">Stay In The Loop! 📧</h2>
-            <p class="loading">Get exclusive drops, styling tips, and Gen Z fashion inspo straight to your inbox!</p>
-            <form class="newsletter-form loading">
-                <input type="email" class="newsletter-input" placeholder="Enter your email...">
+        <div class="newsletter-container fade-in">
+            <h2>Stay Updated</h2>
+            <p>Be the first to know about new arrivals, exclusive offers, and style tips</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
                 <button type="submit" class="newsletter-btn">Subscribe</button>
             </form>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials" style="padding: 100px 2rem; background: linear-gradient(135deg, #F8F9FF, #E8F4FD);">
-        <div class="testimonials-container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <h2 class="section-title loading" style="color: #8A2BE2;">What Our Queens Say 👑</h2>
-            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 4rem;">
-                <div class="testimonial-card loading" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: relative; transition: all 0.4s ease;">
-                    <div class="stars" style="color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="color: #666; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"OMG! The quality is amazing and the colors are so vibrant! Perfect for my college events. Got so many compliments! 💕"</p>
-                    <div class="customer-info" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-                        <div class="customer-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #FF69B4, #8A2BE2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">A</div>
-                        <div>
-                            <h4 style="color: #333; margin-bottom: 0.2rem;">Ananya, 20</h4>
-                            <p style="color: #666; font-size: 0.9rem;">Delhi University</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card loading" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: relative; transition: all 0.4s ease;">
-                    <div class="stars" style="color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="color: #666; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"Finally found a brand that gets Gen Z style! Fast delivery, trendy designs, and pocket-friendly prices. Love it! 🔥"</p>
-                    <div class="customer-info" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-                        <div class="customer-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #4ECDC4, #45B7D1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">P</div>
-                        <div>
-                            <h4 style="color: #333; margin-bottom: 0.2rem;">Priya, 19</h4>
-                            <p style="color: #666; font-size: 0.9rem;">Mumbai College</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card loading" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: relative; transition: all 0.4s ease;">
-                    <div class="stars" style="color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="color: #666; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"These kurtis are Instagram gold! The fit is perfect and they're so comfy. My friends keep asking where I shop! ✨"</p>
-                    <div class="customer-info" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-                        <div class="customer-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #FFA500, #FF6B35); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
-                        <div>
-                            <h4 style="color: #333; margin-bottom: 0.2rem;">Shreya, 21</h4>
-                            <p style="color: #666; font-size: 0.9rem;">Bangalore Tech</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Size Guide -->
-    <section class="size-guide" style="padding: 80px 2rem; background: linear-gradient(135deg, #8A2BE2, #FF69B4); color: white;">
-        <div class="size-guide-container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
-            <h2 class="loading" style="font-size: 2.5rem; margin-bottom: 2rem;">Find Your Perfect Fit 📏</h2>
-            <p class="loading" style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Not sure about sizes? We've got you covered with our easy size guide!</p>
-            <div class="size-chart loading" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2);">
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem;">
-                    <div style="font-weight: 700; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">Size</div>
-                    <div style="font-weight: 700; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">Chest (inches)</div>
-                    <div style="font-weight: 700; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">Length (inches)</div>
-                    <div style="font-weight: 700; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">Best For</div>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;">
-                    <div style="padding: 0.8rem;">XS</div>
-                    <div style="padding: 0.8rem;">32-34</div>
-                    <div style="padding: 0.8rem;">44-46</div>
-                    <div style="padding: 0.8rem;">Petite Queens</div>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;">
-                    <div style="padding: 0.8rem;">S</div>
-                    <div style="padding: 0.8rem;">34-36</div>
-                    <div style="padding: 0.8rem;">44-46</div>
-                    <div style="padding: 0.8rem;">Most Popular</div>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;">
-                    <div style="padding: 0.8rem;">M</div>
-                    <div style="padding: 0.8rem;">36-38</div>
-                    <div style="padding: 0.8rem;">46-48</div>
-                    <div style="padding: 0.8rem;">Comfort Fit</div>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
-                    <div style="padding: 0.8rem;">L</div>
-                    <div style="padding: 0.8rem;">38-40</div>
-                    <div style="padding: 0.8rem;">46-48</div>
-                    <div style="padding: 0.8rem;">Relaxed Fit</div>
-                </div>
-            </div>
-            <p class="loading" style="margin-top: 2rem; font-size: 1rem; opacity: 0.8;">Still confused? Chat with us and we'll help you pick the perfect size! 💬</p>
-        </div>
-    </section>
-
-    <!-- Instagram Feed -->
-    <section class="instagram-feed" style="padding: 100px 2rem; background: white;">
-        <div class="instagram-container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            <h2 class="section-title loading" style="color: #8A2BE2;">Follow Us @TrendyKurtis 📸</h2>
-            <p class="loading" style="color: #666; font-size: 1.2rem; margin-bottom: 3rem;">See how our queens style their kurtis! Tag us for a chance to be featured!</p>
-            <div class="instagram-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 3rem;">
-                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #FF69B4, #8A2BE2); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">📸</div>
-                </div>
-                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #4ECDC4, #45B7D1); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">💃</div>
-                </div>
-                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #FFA500, #FF6B35); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">✨</div>
-                </div>
-                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #8A2BE2, #FF69B4); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">👑</div>
-                </div>
-                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #FF69B4, #4ECDC4); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">💖</div>
-                </div>
-                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #45B7D1, #FFA500); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">🌟</div>
-                </div>
-            </div>
-            <button class="loading" style="margin-top: 3rem; background: linear-gradient(135deg, #FF69B4, #8A2BE2); color: white; padding: 15px 35px; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Follow Us on Instagram</button>
         </div>
     </section>
 
@@ -997,61 +1295,109 @@
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-content">
-                <div class="footer-section loading">
-                    <h3>Trendy Kurtis</h3>
-                    <p style="color: #ccc; line-height: 1.6; margin-bottom: 1rem;">Fashion for the fearless Gen Z queens. Where traditional meets trendy, and every outfit tells your story.</p>
+                <div class="footer-brand fade-in">
+                    <h3>AURA</h3>
+                    <p>Contemporary fashion for the modern woman. We create kurtis that blend traditional elegance with contemporary style, designed for women who value quality and sophistication.</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="footer-section loading">
-                    <h3>Quick Links</h3>
+                
+                <div class="footer-section fade-in">
+                    <h4>Shop</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#shop">Shop All</a></li>
                         <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Collections</a></li>
                         <li><a href="#">Sale</a></li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="#">Size Guide</a></li>
                     </ul>
                 </div>
-                <div class="footer-section loading">
-                    <h3>Customer Care</h3>
+                
+                <div class="footer-section fade-in">
+                    <h4>Support</h4>
                     <ul>
                         <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Size Guide</a></li>
                         <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns & Exchange</a></li>
+                        <li><a href="#">Returns</a></li>
                         <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Care Guide</a></li>
                     </ul>
                 </div>
-                <div class="footer-section loading">
-                    <h3>Get In Touch</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-phone" style="color: #4ECDC4; margin-right: 0.5rem;"></i> +91 98765 43210</li>
-                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-envelope" style="color: #4ECDC4; margin-right: 0.5rem;"></i> hello@trendykurtis.com</li>
-                        <li><i class="fas fa-map-marker-alt" style="color: #4ECDC4; margin-right: 0.5rem;"></i> Mumbai, India</li>
+                
+                <div class="footer-section fade-in">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section fade-in">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li style="list-style: none; color: #ccc;"><i class="fas fa-phone" style="margin-right: 8px; color: #667eea;"></i> +91 98765 43210</li>
+                        <li style="list-style: none; color: #ccc;"><i class="fas fa-envelope" style="margin-right: 8px; color: #667eea;"></i> hello@auraindia.com</li>
+                        <li style="list-style: none; color: #ccc;"><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: #667eea;"></i> Mumbai, India</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 Trendy Kurtis. All rights reserved. Made with 💕 for Gen Z Queens</p>
+                <p>&copy; 2024 AURA. All rights reserved. Designed for the modern Indian woman.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-menu-toggle" style="display: none; position: fixed; top: 20px; right: 20px; z-index: 1001; width: 50px; height: 50px; background: white; border-radius: 50%; box-shadow: 0 4px 20px rgba(0,0,0,0.1); align-items: center; justify-content: center; cursor: pointer;">
+        <i class="fas fa-bars" style="color: #667eea; font-size: 1.2rem;"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
     <div class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
-        <a href="https://wa.me/919876543210" target="_blank" style="width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; text-decoration: none; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; animation: pulse 2s infinite;">
+        <a href="https://wa.me/919876543210" target="_blank" style="width: 60px; height: 60px; background: linear-gradient(135deg, #25D366, #128C7E); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; text-decoration: none; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; animation: pulse 2s infinite;">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Enhanced scroll navigation
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1065,254 +1411,192 @@
             });
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('loaded');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all loading elements
-        document.querySelectorAll('.loading').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Add hover effects to cards
-        document.querySelectorAll('.collection-card, .product-card, .feature-card, .testimonial-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+        // Enhanced add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Button animation
+                const originalText = this.textContent;
+                this.innerHTML = '<i class="fas fa-check"></i> Added!';
+                this.style.background = 'linear-gradient(135deg, #4caf50, #45a049)';
+                
+                // Cart count update
+                const cartCount = document.querySelector('.cart-count');
+                const currentCount = parseInt(cartCount.textContent);
+                cartCount.textContent = currentCount + 1;
+                
+                // Cart icon animation
+                const cartIcon = document.querySelector('.cart-icon');
+                cartIcon.style.animation = 'bounce 0.6s ease';
+                
+                // Reset after delay
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                    cartIcon.style.animation = '';
+                }, 2000);
             });
         });
 
-        // Instagram posts hover effect
-        document.querySelectorAll('.instagram-post').forEach(post => {
-            post.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05) rotate(2deg)';
-                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.2)';
-            });
-            
-            post.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1) rotate(0deg)';
-                this.style.boxShadow = 'none';
-            });
+        // Wishlist functionality
+        document.querySelectorAll('.action-btn').forEach(btn => {
+            if (btn.querySelector('.fa-heart')) {
+                btn.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        this.style.color = '#ff6b6b';
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        this.style.color = '';
+                    }
+                });
+            }
         });
 
         // Newsletter form submission
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = this.querySelector('.newsletter-input').value;
-            if (email) {
-                // Create success animation
-                const btn = this.querySelector('.newsletter-btn');
+            const input = this.querySelector('.newsletter-input');
+            const btn = this.querySelector('.newsletter-btn');
+            
+            if (input.value.trim()) {
                 const originalText = btn.textContent;
-                btn.textContent = 'Subscribed! ✅';
-                btn.style.background = '#4ECDC4';
+                btn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+                btn.style.background = '#4caf50';
                 
                 setTimeout(() => {
                     btn.textContent = originalText;
-                    btn.style.background = '#FF69B4';
-                    this.querySelector('.newsletter-input').value = '';
-                }, 2000);
+                    btn.style.background = 'white';
+                    input.value = '';
+                }, 3000);
             }
         });
 
-        // Add to cart animations
-        document.querySelectorAll('.product-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const originalText = this.textContent;
-                this.textContent = 'Added! ✅';
-                this.style.background = '#4ECDC4';
-                
-                // Create floating cart animation
-                const cart = document.createElement('div');
-                cart.innerHTML = '🛒';
-                cart.style.position = 'fixed';
-                cart.style.fontSize = '2rem';
-                cart.style.zIndex = '9999';
-                cart.style.pointerEvents = 'none';
-                cart.style.left = this.getBoundingClientRect().left + 'px';
-                cart.style.top = this.getBoundingClientRect().top + 'px';
-                cart.style.transition = 'all 1s ease';
-                
-                document.body.appendChild(cart);
-                
-                setTimeout(() => {
-                    cart.style.transform = 'translateY(-100px) scale(2)';
-                    cart.style.opacity = '0';
-                }, 10);
-                
-                setTimeout(() => {
-                    cart.remove();
-                    this.textContent = originalText;
-                    this.style.background = '#4ECDC4';
-                }, 1000);
-            });
-        });
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
 
-        // Create floating elements periodically
-        function createFloatingElement() {
-            const elements = ['✨', '💖', '👑', '🌟', '💫', '🦋', '🌸', '💎'];
-            const element = document.createElement('div');
-            element.style.position = 'fixed';
-            element.style.fontSize = '1.5rem';
-            element.style.pointerEvents = 'none';
-            element.style.zIndex = '100';
-            element.style.left = Math.random() * window.innerWidth + 'px';
-            element.style.top = window.innerHeight + 'px';
-            element.style.opacity = '0.7';
-            element.style.transition = 'all 8s linear';
-            element.textContent = elements[Math.floor(Math.random() * elements.length)];
-            
-            document.body.appendChild(element);
-            
-            setTimeout(() => {
-                element.style.top = '-100px';
-                element.style.transform = 'rotate(360deg)';
-                element.style.opacity = '0';
-            }, 10);
-            
-            setTimeout(() => {
-                element.remove();
-            }, 8000);
+        function toggleMobileMenu() {
+            if (window.innerWidth <= 768) {
+                mobileMenuToggle.style.display = 'flex';
+                
+                mobileMenuToggle.addEventListener('click', () => {
+                    if (navLinks.style.display === 'flex') {
+                        navLinks.style.display = 'none';
+                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                    } else {
+                        navLinks.style.display = 'flex';
+                        navLinks.style.flexDirection = 'column';
+                        navLinks.style.position = 'fixed';
+                        navLinks.style.top = '80px';
+                        navLinks.style.left = '0';
+                        navLinks.style.right = '0';
+                        navLinks.style.background = 'white';
+                        navLinks.style.padding = '2rem';
+                        navLinks.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+                        mobileMenuToggle.querySelector('i').classList.remove('fa-bars');
+                        mobileMenuToggle.querySelector('i').classList.add('fa-times');
+                    }
+                });
+            } else {
+                mobileMenuToggle.style.display = 'none';
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'row';
+                navLinks.style.position = 'static';
+                navLinks.style.background = 'transparent';
+                navLinks.style.padding = '0';
+                navLinks.style.boxShadow = 'none';
+            }
         }
 
-        // Create floating elements every 3 seconds
-        setInterval(createFloatingElement, 3000);
+        // Initialize mobile menu on load and resize
+        toggleMobileMenu();
+        window.addEventListener('resize', toggleMobileMenu);
 
-        // Parallax effect for floating shapes
+        // Loading animations for images
+        const imageElements = document.querySelectorAll('[style*="background-image"]');
+        imageElements.forEach(img => {
+            img.style.opacity = '0.8';
+            img.style.transition = 'all 0.6s ease';
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            observer.observe(img);
+        });
+
+        // Enhanced parallax effects
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const shapes = document.querySelectorAll('.shape');
+            const heroContent = document.querySelector('.hero-content');
+            const heroImage = document.querySelector('.hero-image');
             
-            shapes.forEach((shape, index) => {
-                const speed = 0.3 + (index * 0.1);
-                shape.style.transform = `translateY(${scrolled * speed}px)`;
-            });
+            if (heroContent && heroImage) {
+                heroContent.style.transform = `translateY(${scrolled * 0.1}px)`;
+                heroImage.style.transform = `translateY(${scrolled * 0.05}px)`;
+            }
         });
 
-        // Add ripple effect to buttons
-        document.querySelectorAll('button, .hero-cta, .collection-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255, 255, 255, 0.4)';
-                ripple.style.animation = 'ripple 0.6s ease-out';
-                ripple.style.pointerEvents = 'none';
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-
-        // Mobile menu toggle (for future enhancement)
-        const mobileMenuBtn = document.createElement('button');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        mobileMenuBtn.style.display = 'none';
-        mobileMenuBtn.style.background = 'none';
-        mobileMenuBtn.style.border = 'none';
-        mobileMenuBtn.style.color = 'white';
-        mobileMenuBtn.style.fontSize = '1.5rem';
-        mobileMenuBtn.style.cursor = 'pointer';
-        
-        // Add mobile menu functionality
-        if (window.innerWidth <= 768) {
-            document.querySelector('.nav-container').appendChild(mobileMenuBtn);
-            mobileMenuBtn.style.display = 'block';
-        }
-
-        // Lazy loading for images
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.style.opacity = '1';
-                    img.style.transform = 'scale(1)';
-                    observer.unobserve(img);
+        // Bounce animation for cart
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes bounce {
+                0%, 20%, 60%, 100% {
+                    transform: translateY(0);
                 }
-            });
-        });
+                40% {
+                    transform: translateY(-10px);
+                }
+                80% {
+                    transform: translateY(-5px);
+                }
+            }
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
 
-        document.querySelectorAll('.product-image, .collection-image, .hero-model').forEach(img => {
-            img.style.opacity = '0.8';
-            img.style.transform = 'scale(0.9)';
-            img.style.transition = 'all 0.6s ease';
-            imageObserver.observe(img);
-        });
+        // Enhanced responsive improvements
+        function updateResponsiveElements() {
+            const collectionsGrid = document.querySelector('.collections-grid');
+            const productsGrid = document.querySelector('.products-grid');
+            const featuresGrid = document.querySelector('.features-grid');
+            
+            if (window.innerWidth <= 480) {
+                collectionsGrid.style.gridTemplateColumns = '1fr';
+                productsGrid.style.gridTemplateColumns = '1fr';
+                featuresGrid.style.gridTemplateColumns = '1fr';
+            } else if (window.innerWidth <= 768) {
+                collectionsGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                productsGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                featuresGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            } else if (window.innerWidth <= 1024) {
+                collectionsGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                productsGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                featuresGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            } else {
+                collectionsGrid.style.gridTemplateColumns = '';
+                productsGrid.style.gridTemplateColumns = '';
+                featuresGrid.style.gridTemplateColumns = '';
+            }
+        }
+
+        window.addEventListener('resize', updateResponsiveElements);
+        updateResponsiveElements();
     </script>
-
-    <style>
-        @keyframes ripple {
-            to {
-                transform: scale(2);
-                opacity: 0;
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        /* Additional mobile responsiveness */
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .collections-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-    </style>
 </body>
 </html>
