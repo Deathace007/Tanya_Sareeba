@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendy Kurtis - Fashion for Gen Z Queens</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #FF69B4, #E91E63);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF69B4;
+            text-transform: lowercase;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .login-btn {
+            background: #4ECDC4;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: #45B7D1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 205, 196, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8A2BE2, #FF69B4, #FFA500);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad1" cx="50%" cy="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23grad1)"/><circle cx="800" cy="300" r="150" fill="url(%23grad1)"/><circle cx="400" cy="700" r="80" fill="url(%23grad1)"/></svg>') no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            background: #4ECDC4;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            background: #45B7D1;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 205, 196, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-model {
+            width: 100%;
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape1 {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 165, 0, 0.7);
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape2 {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 105, 180, 0.6);
+            bottom: 20%;
+            left: -5%;
+            animation-delay: 2s;
+        }
+
+        .shape3 {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 215, 0, 0.8);
+            top: 60%;
+            right: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+        }
+
+        /* Collections Section */
+        .collections {
+            background: linear-gradient(135deg, #F8F9FF, #E8F4FD);
+            padding: 100px 2rem;
+            position: relative;
+        }
+
+        .collections::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(255,105,180,0.05)"/><stop offset="100%" style="stop-color:rgba(138,43,226,0.05)"/></linearGradient></defs><polygon points="0,0 1000,300 1000,1000 0,700" fill="url(%23grad2)"/></svg>') no-repeat;
+            background-size: cover;
+        }
+
+        .collections-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #8A2BE2;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #FF69B4, #4ECDC4);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .collection-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .collection-image {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blue-kurtis {
+            background-image: url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+        }
+
+        .green-kurtis {
+            background-image: url('https://images.unsplash.com/photo-1583391733722-ad9d7b1f86ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+        }
+
+        .collection-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.1), transparent);
+            transition: all 0.3s ease;
+        }
+
+        .collection-card:hover .collection-image::before {
+            background: linear-gradient(45deg, rgba(255,105,180,0.3), rgba(76,205,196,0.3));
+        }
+
+        .collection-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .collection-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .collection-btn {
+            background: linear-gradient(135deg, #8A2BE2, #FF69B4);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .collection-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+        }
+
+        /* Featured Products */
+        .featured {
+            padding: 100px 2rem;
+            background: linear-gradient(135deg, #FF69B4, #8A2BE2);
+            color: white;
+        }
+
+        .featured-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .featured .section-title {
+            color: white;
+        }
+
+        .featured .section-title::after {
+            background: linear-gradient(45deg, #4ECDC4, #FFA500);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .product-card:hover::before {
+            left: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product1 { background-image: url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'); }
+        .product2 { background-image: url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'); }
+        .product3 { background-image: url('https://images.unsplash.com/photo-1583391733722-ad9d7b1f86ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'); }
+        .product4 { background-image: url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'); }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4ECDC4;
+            margin-bottom: 1rem;
+        }
+
+        .product-btn {
+            background: #4ECDC4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .product-btn:hover {
+            background: #45B7D1;
+            transform: translateY(-2px);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 100px 2rem;
+            background: white;
+        }
+
+        .why-choose-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #F8F9FF, #E8F4FD);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #FF69B4, #8A2BE2, #4ECDC4);
+            border-radius: 20px;
+            padding: 2px;
+            mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #FF69B4, #8A2BE2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, #4ECDC4, #45B7D1);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: #FF69B4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: #E91E63;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 60px 2rem 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #4ECDC4;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #4ECDC4;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #FF69B4, #8A2BE2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #ccc;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .collections-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .hero-model {
+                height: 400px;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-on-scroll {
+            animation: slideInUp 0.8s ease forwards;
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .loading.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">t</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="login-btn">Login</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-shapes">
+            <div class="shape shape1"></div>
+            <div class="shape shape2"></div>
+            <div class="shape shape3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content loading">
+                <h1>Stylish<br>Kurtis</h1>
+                <p class="hero-subtitle">For the Gen Z Queen</p>
+                <a href="#shop" class="hero-cta">Shop Now</a>
+            </div>
+            <div class="hero-image loading">
+                <div class="hero-model"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="shop">
+        <div class="collections-container">
+            <h2 class="section-title loading">Discover Our Collections</h2>
+            <div class="collections-grid">
+                <div class="collection-card loading">
+                    <div class="collection-image blue-kurtis"></div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Blue Kurtis</h3>
+                        <a href="#" class="collection-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="collection-card loading">
+                    <div class="collection-image green-kurtis"></div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Green Kurtis</h3>
+                        <a href="#" class="collection-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured">
+        <div class="featured-container">
+            <h2 class="section-title loading">Trending Now 🔥</h2>
+            <div class="products-grid">
+                <div class="product-card loading">
+                    <div class="product-image product1"></div>
+                    <h4 class="product-title">Boho Chic Kurti</h4>
+                    <p class="product-price">₹1,299</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+                <div class="product-card loading">
+                    <div class="product-image product2"></div>
+                    <h4 class="product-title">Royal Blue Elegance</h4>
+                    <p class="product-price">₹1,599</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+                <div class="product-card loading">
+                    <div class="product-image product3"></div>
+                    <h4 class="product-title">Emerald Dream</h4>
+                    <p class="product-price">₹1,199</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+                <div class="product-card loading">
+                    <div class="product-image product4"></div>
+                    <h4 class="product-title">Sunshine Yellow</h4>
+                    <p class="product-price">₹1,399</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="about">
+        <div class="why-choose-container">
+            <h2 class="section-title loading">Why Gen Z Loves Us 💕</h2>
+            <div class="features-grid">
+                <div class="feature-card loading">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Lightning Fast Delivery</h3>
+                    <p class="feature-description">Get your favorite kurtis delivered in 24-48 hours. Because waiting is so last season!</p>
+                </div>
+                <div class="feature-card loading">
+                    <div class="feature-icon">💎</div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p class="feature-description">Handpicked fabrics and superior craftsmanship. Quality that lasts, style that impresses.</p>
+                </div>
+                <div class="feature-card loading">
+                    <div class="feature-icon">🌟</div>
+                    <h3 class="feature-title">Insta-Worthy Designs</h3>
+                    <p class="feature-description">Every piece is designed to be your next viral post. Get ready for those likes and compliments!</p>
+                </div>
+                <div class="feature-card loading">
+                    <div class="feature-icon">💸</div>
+                    <h3 class="feature-title">Student-Friendly Prices</h3>
+                    <p class="feature-description">Look like a million bucks without breaking the bank. Fashion that fits your budget!</p>
+                </div>
+                <div class="feature-card loading">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Easy Returns</h3>
+                    <p class="feature-description">Not feeling it? No worries! 30-day hassle-free returns. Shop with confidence!</p>
+                </div>
+                <div class="feature-card loading">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">24/7 Support</h3>
+                    <p class="feature-description">Got questions? We're always here to help. Chat, call, or DM us anytime!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <h2 class="loading">Stay In The Loop! 📧</h2>
+            <p class="loading">Get exclusive drops, styling tips, and Gen Z fashion inspo straight to your inbox!</p>
+            <form class="newsletter-form loading">
+                <input type="email" class="newsletter-input" placeholder="Enter your email...">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" style="padding: 100px 2rem; background: linear-gradient(135deg, #F8F9FF, #E8F4FD);">
+        <div class="testimonials-container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title loading" style="color: #8A2BE2;">What Our Queens Say 👑</h2>
+            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 4rem;">
+                <div class="testimonial-card loading" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: relative; transition: all 0.4s ease;">
+                    <div class="stars" style="color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: #666; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"OMG! The quality is amazing and the colors are so vibrant! Perfect for my college events. Got so many compliments! 💕"</p>
+                    <div class="customer-info" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                        <div class="customer-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #FF69B4, #8A2BE2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">A</div>
+                        <div>
+                            <h4 style="color: #333; margin-bottom: 0.2rem;">Ananya, 20</h4>
+                            <p style="color: #666; font-size: 0.9rem;">Delhi University</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card loading" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: relative; transition: all 0.4s ease;">
+                    <div class="stars" style="color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: #666; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"Finally found a brand that gets Gen Z style! Fast delivery, trendy designs, and pocket-friendly prices. Love it! 🔥"</p>
+                    <div class="customer-info" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                        <div class="customer-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #4ECDC4, #45B7D1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">P</div>
+                        <div>
+                            <h4 style="color: #333; margin-bottom: 0.2rem;">Priya, 19</h4>
+                            <p style="color: #666; font-size: 0.9rem;">Mumbai College</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card loading" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: relative; transition: all 0.4s ease;">
+                    <div class="stars" style="color: #FFD700; font-size: 1.2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: #666; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"These kurtis are Instagram gold! The fit is perfect and they're so comfy. My friends keep asking where I shop! ✨"</p>
+                    <div class="customer-info" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                        <div class="customer-avatar" style="width: 50px; height: 50px; background: linear-gradient(135deg, #FFA500, #FF6B35); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+                        <div>
+                            <h4 style="color: #333; margin-bottom: 0.2rem;">Shreya, 21</h4>
+                            <p style="color: #666; font-size: 0.9rem;">Bangalore Tech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide -->
+    <section class="size-guide" style="padding: 80px 2rem; background: linear-gradient(135deg, #8A2BE2, #FF69B4); color: white;">
+        <div class="size-guide-container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 class="loading" style="font-size: 2.5rem; margin-bottom: 2rem;">Find Your Perfect Fit 📏</h2>
+            <p class="loading" style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Not sure about sizes? We've got you covered with our easy size guide!</p>
+            <div class="size-chart loading" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                    <div style="font-weight: 700; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">Size</div>
+                    <div style="font-weight: 700; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">Chest (inches)</div>
+                    <div style="font-weight: 700; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">Length (inches)</div>
+                    <div style="font-weight: 700; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">Best For</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;">
+                    <div style="padding: 0.8rem;">XS</div>
+                    <div style="padding: 0.8rem;">32-34</div>
+                    <div style="padding: 0.8rem;">44-46</div>
+                    <div style="padding: 0.8rem;">Petite Queens</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;">
+                    <div style="padding: 0.8rem;">S</div>
+                    <div style="padding: 0.8rem;">34-36</div>
+                    <div style="padding: 0.8rem;">44-46</div>
+                    <div style="padding: 0.8rem;">Most Popular</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem;">
+                    <div style="padding: 0.8rem;">M</div>
+                    <div style="padding: 0.8rem;">36-38</div>
+                    <div style="padding: 0.8rem;">46-48</div>
+                    <div style="padding: 0.8rem;">Comfort Fit</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                    <div style="padding: 0.8rem;">L</div>
+                    <div style="padding: 0.8rem;">38-40</div>
+                    <div style="padding: 0.8rem;">46-48</div>
+                    <div style="padding: 0.8rem;">Relaxed Fit</div>
+                </div>
+            </div>
+            <p class="loading" style="margin-top: 2rem; font-size: 1rem; opacity: 0.8;">Still confused? Chat with us and we'll help you pick the perfect size! 💬</p>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="instagram-feed" style="padding: 100px 2rem; background: white;">
+        <div class="instagram-container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title loading" style="color: #8A2BE2;">Follow Us @TrendyKurtis 📸</h2>
+            <p class="loading" style="color: #666; font-size: 1.2rem; margin-bottom: 3rem;">See how our queens style their kurtis! Tag us for a chance to be featured!</p>
+            <div class="instagram-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 3rem;">
+                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #FF69B4, #8A2BE2); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">📸</div>
+                </div>
+                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #4ECDC4, #45B7D1); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">💃</div>
+                </div>
+                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #FFA500, #FF6B35); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">✨</div>
+                </div>
+                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #8A2BE2, #FF69B4); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">👑</div>
+                </div>
+                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #FF69B4, #4ECDC4); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">💖</div>
+                </div>
+                <div class="instagram-post loading" style="aspect-ratio: 1; background: linear-gradient(135deg, #45B7D1, #FFA500); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s ease;">
+                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; opacity: 0.8;">🌟</div>
+                </div>
+            </div>
+            <button class="loading" style="margin-top: 3rem; background: linear-gradient(135deg, #FF69B4, #8A2BE2); color: white; padding: 15px 35px; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Follow Us on Instagram</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section loading">
+                    <h3>Trendy Kurtis</h3>
+                    <p style="color: #ccc; line-height: 1.6; margin-bottom: 1rem;">Fashion for the fearless Gen Z queens. Where traditional meets trendy, and every outfit tells your story.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section loading">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#shop">Shop All</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Sale</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section loading">
+                    <h3>Customer Care</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchange</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section loading">
+                    <h3>Get In Touch</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-phone" style="color: #4ECDC4; margin-right: 0.5rem;"></i> +91 98765 43210</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-envelope" style="color: #4ECDC4; margin-right: 0.5rem;"></i> hello@trendykurtis.com</li>
+                        <li><i class="fas fa-map-marker-alt" style="color: #4ECDC4; margin-right: 0.5rem;"></i> Mumbai, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Trendy Kurtis. All rights reserved. Made with 💕 for Gen Z Queens</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
+        <a href="https://wa.me/919876543210" target="_blank" style="width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; text-decoration: none; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; animation: pulse 2s infinite;">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('loaded');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all loading elements
+        document.querySelectorAll('.loading').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.collection-card, .product-card, .feature-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Instagram posts hover effect
+        document.querySelectorAll('.instagram-post').forEach(post => {
+            post.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) rotate(2deg)';
+                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.2)';
+            });
+            
+            post.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('.newsletter-input').value;
+            if (email) {
+                // Create success animation
+                const btn = this.querySelector('.newsletter-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Subscribed! ✅';
+                btn.style.background = '#4ECDC4';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#FF69B4';
+                    this.querySelector('.newsletter-input').value = '';
+                }, 2000);
+            }
+        });
+
+        // Add to cart animations
+        document.querySelectorAll('.product-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const originalText = this.textContent;
+                this.textContent = 'Added! ✅';
+                this.style.background = '#4ECDC4';
+                
+                // Create floating cart animation
+                const cart = document.createElement('div');
+                cart.innerHTML = '🛒';
+                cart.style.position = 'fixed';
+                cart.style.fontSize = '2rem';
+                cart.style.zIndex = '9999';
+                cart.style.pointerEvents = 'none';
+                cart.style.left = this.getBoundingClientRect().left + 'px';
+                cart.style.top = this.getBoundingClientRect().top + 'px';
+                cart.style.transition = 'all 1s ease';
+                
+                document.body.appendChild(cart);
+                
+                setTimeout(() => {
+                    cart.style.transform = 'translateY(-100px) scale(2)';
+                    cart.style.opacity = '0';
+                }, 10);
+                
+                setTimeout(() => {
+                    cart.remove();
+                    this.textContent = originalText;
+                    this.style.background = '#4ECDC4';
+                }, 1000);
+            });
+        });
+
+        // Create floating elements periodically
+        function createFloatingElement() {
+            const elements = ['✨', '💖', '👑', '🌟', '💫', '🦋', '🌸', '💎'];
+            const element = document.createElement('div');
+            element.style.position = 'fixed';
+            element.style.fontSize = '1.5rem';
+            element.style.pointerEvents = 'none';
+            element.style.zIndex = '100';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = window.innerHeight + 'px';
+            element.style.opacity = '0.7';
+            element.style.transition = 'all 8s linear';
+            element.textContent = elements[Math.floor(Math.random() * elements.length)];
+            
+            document.body.appendChild(element);
+            
+            setTimeout(() => {
+                element.style.top = '-100px';
+                element.style.transform = 'rotate(360deg)';
+                element.style.opacity = '0';
+            }, 10);
+            
+            setTimeout(() => {
+                element.remove();
+            }, 8000);
+        }
+
+        // Create floating elements every 3 seconds
+        setInterval(createFloatingElement, 3000);
+
+        // Parallax effect for floating shapes
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = 0.3 + (index * 0.1);
+                shape.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('button, .hero-cta, .collection-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.4)';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Mobile menu toggle (for future enhancement)
+        const mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileMenuBtn.style.display = 'none';
+        mobileMenuBtn.style.background = 'none';
+        mobileMenuBtn.style.border = 'none';
+        mobileMenuBtn.style.color = 'white';
+        mobileMenuBtn.style.fontSize = '1.5rem';
+        mobileMenuBtn.style.cursor = 'pointer';
+        
+        // Add mobile menu functionality
+        if (window.innerWidth <= 768) {
+            document.querySelector('.nav-container').appendChild(mobileMenuBtn);
+            mobileMenuBtn.style.display = 'block';
+        }
+
+        // Lazy loading for images
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.opacity = '1';
+                    img.style.transform = 'scale(1)';
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('.product-image, .collection-image, .hero-model').forEach(img => {
+            img.style.opacity = '0.8';
+            img.style.transform = 'scale(0.9)';
+            img.style.transition = 'all 0.6s ease';
+            imageObserver.observe(img);
+        });
+    </script>
+
+    <style>
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Additional mobile responsiveness */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .collections-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>
